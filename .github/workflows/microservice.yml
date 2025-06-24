@@ -20,7 +20,11 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
-      
+
+      - name: Install pytest (required to run pytest action)
+        run: pip install pytest
+
+      # https://github.com/marketplace/actions/run-pytest
       - name: Run pytest
         uses: pavelzw/pytest-action@v2
         with:
