@@ -1,7 +1,7 @@
-apiVersion: v1
+apiVersion: v99
 kind: Pod
 metadata:
-  name: myfirstpod
+  name: myfirstpod2
 spec:
   containers:
   - name: webster
