@@ -8,7 +8,7 @@ on:
 jobs:
   hello_earth:  # job name
     runs-on: ubuntu-latest
-    if: "contains(github.event.head_commit.message, '[earth]')"
+    if: "contains(github.event.head_commit.message, 'earth')"
     steps:
       - run: echo people of earth how are you
 
