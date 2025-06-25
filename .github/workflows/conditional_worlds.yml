@@ -1,0 +1,15 @@
+name: Hello Earth Hello Mars
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello_earth:  # job name
+    if: "contains(github.event.head_commit.message, '[earth]')"
+    run: echo people of earth how are you
+
+  hello_mars:
+    if: "contains(github.event.head_commit.message, '[mars]')"
+    run: echo grok with me my martian friends
