@@ -5,9 +5,9 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
-COPY app.py app.py
+COPY app.py /app/app.py
 
 # Add current directory to PYTHONPATH so app.py can be imported in tests
 ENV PYTHONPATH=/app
 
-CMD ["python app.py"]
+CMD ["python /app/app.py"]
