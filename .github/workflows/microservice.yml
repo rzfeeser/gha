@@ -1,9 +1,6 @@
 name: Microservice CI
 
-on:
-  push:
-    branches:
-      - main
+on: [workflow_dispatch]
 
 jobs:
   build-and-test:
@@ -20,7 +17,11 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
-      
+
+      - name: Install pytest (required to run pytest action)
+        run: pip install pytest pytest-md pytest-emoji
+
+      # https://github.com/marketplace/actions/run-pytest
       - name: Run pytest
         uses: pavelzw/pytest-action@v2
         with:
